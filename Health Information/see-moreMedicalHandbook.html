@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm Nang Y Tế</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-card {
+            display: flex;
+            /* Sử dụng flexbox để sắp xếp theo chiều ngang */
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image {
+            width: 200px;
+            /* Đặt chiều rộng cho hình ảnh */
+            height: 100%;
+            /* Chiều cao tự động */
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+            flex: 1;
+            /* Chiếm phần còn lại của không gian */
+        }
+
+        .article-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .article-excerpt {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 15px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .categories {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .categories h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-item:last-child {
+            border-bottom: none;
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .category-info {
+            flex: 1;
+        }
+
+        .category-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .category-count {
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Cẩm Nang Y Tế</div>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm từ khoá, chủ đề...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div>
+            <main class="article-list">
+                <article class="article-card">
+                    <img src="images/d2-142798.jpg" alt="người bị axit uric cao và cafe" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">Người bị axit uric cao có uống được cà phê không?</h2>
+                        <p class="article-excerpt">Thói quen ăn uống, như uống quá nhiều rượu, ăn nhiều thịt đỏ, uống đồ
+                            uống có đường, có thể dẫn đến axit uric cao. Bên cạnh đó, có nhiều thông tin trái ngược nhau
+                            về
+                            cà phê.</p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 28/10/2024</span>
+                            <span class="meta-item">👁️ 23 Lượt xem</span>
+                            <span class="meta-item">⏱️ 5 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="images/4.png" alt="canxi cùng với cafe" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">Uống viên canxi cùng cà phê có sao không?</h2>
+                        <p class="article-excerpt">Uống cà phê là thói quen của rất nhiều người, nhất là vào buổi sáng,
+                            nhưng với những người đang uống bổ sung viên canxi, có nên uống cùng cà phê không?</p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 28/10/2024</span>
+                            <span class="meta-item">👁️ 16 Lượt xem</span>
+                            <span class="meta-item">⏱️ 7 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="images/z5974651173758_d4e2ea202bbe4cc705f3ee4ac2a78b87.jpg" alt="người già nên đi bộ"
+                        class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">Vì sao người già nên đi bộ?</h2>
+                        <p class="article-excerpt">Đi bộ là bộ môn được nhiều người già lựa chọn để duy trì hoạt động
+                            thể
+                            chất vì an toàn và dễ thực hiện. Tuy nhiên người già ngày nào cũng đi bộ có sao không?</p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 25/10/2024</span>
+                            <span class="meta-item">👁️ 19 Lượt xem</span>
+                            <span class="meta-item">⏱️ 5 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="images/1a-204358.webp" alt="thực phẩm giàu tinh bột" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">5 thực phẩm giàu tinh bột kháng tốt cho hệ tiêu hoá</h2>
+                        <p class="article-excerpt">Dưới đây là các thực phẩm chứa hàm lượng tinh bột kháng cao mà theo
+                            Học
+                            viện Dinh dưỡng và Ăn kiêng Hoa Kỳ, mỗi người nên tiêu thụ từ 6-30g tinh bột kháng trên
+                            ngày.
+                        </p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 15/10/2024</span>
+                            <span class="meta-item">👁️ 29 Lượt xem</span>
+                            <span class="meta-item">⏱️ 6 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="images/n1-870294.webp" alt="nguyên nhân hệ tiêu hóa trẻ bị ảnh hưởng"
+                        class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">7 nguyên nhân khiến hệ tiêu hóa của trẻ bị ảnh hưởng</h2>
+                        <p class="article-excerpt">Tiêu hóa là một chức năng vô cùng quan trọng đảm bảo cho sự phát
+                            triển
+                            của cơ thể trong mọi giai đoạn, đặc biệt là năm đầu tiên của cuộc đời.</p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 09/10/2024</span>
+                            <span class="meta-item">👁️ 50 Lượt xem</span>
+                            <span class="meta-item">⏱️ 8 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="images/d1-874405.webp" alt="chế độ ăn cho người tiểu đường type 2" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">Chế độ ăn cho người bệnh tiểu đường type 2</h2>
+                        <p class="article-excerpt">Bệnh tiểu đường (hay còn gọi đái tháo đường) là bệnh rối loạn chuyển
+                            hóa,
+                            có đặc điểm tăng glucose huyết mạn tính do khiếm khuyết về tiết insulin, về tác động của
+                            insulin, hoặc cả hai. Một chế độ ăn uống lành mạnh có thể giúp kiểm soát tốt đường huyết,
+                            ngăn
+                            ngừa biến chứng của bệnh và cải thiện chất lượng cuộc sống.</p>
+                        <div class="article-meta">
+                            <span class="meta-item">📅 16/10/2024</span>
+                            <span class="meta-item">👁️ 80 Lượt xem</span>
+                            <span class="meta-item">⏱️ 7 Phút đọc</span>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+
+        <div>
+            <aside class="categories">
+                <h2>ĐỌC THEO CHUYÊN ĐỀ</h2>
+                <div class="category-item">
+                    <img src="images/san-phu-khoa_124c84ce_3436_4de9_9566_e06b7d86a6fd.png" alt="Sản Phụ Khoa"
+                        class="category-icon">
+                    <div class="category-info">
+                        <div class="category-name">Sản Phụ Khoa</div>
+                        <div class="category-count">20 bài viết</div>
+                    </div>
+                </div>
+
+                <div class="category-item">
+                    <img src="images/tieu-hoa_37069d80_efa8_499e_ba2e_0cf65541f298.png" alt="Tiêu Hóa"
+                        class="category-icon">
+                    <div class="category-info">
+                        <div class="category-name">Tiêu Hóa</div>
+                        <div class="category-count">25 Bài viết</div>
+                    </div>
+                </div>
+
+                <div class="category-item">
+                    <img src="images/tim-mach_0ae32e1f_e397_459f_98ce_0cfe72af3a3f.png" alt="Tim Mạch"
+                        class="category-icon">
+                    <div class="category-info">
+                        <div class="category-name">Tim Mạch</div>
+                        <div class="category-count">21 Bài viết</div>
+                    </div>
+                </div>
+
+                <div class="category-item">
+                    <img src="images/nhi-khoa_e8dd1a9f_0363_496f_847f_87265e0913b6.png" alt="Nhi Khoa"
+                        class="category-icon">
+                    <div class="category-info">
+                        <div class="category-name">Nhi Khoa</div>
+                        <div class="category-count">15 Bài viết</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        // Add search functionality
+        const searchInput = document.querySelector('.search-box input');
+        const searchButton = document.querySelector('.search-box button');
+
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value;
+            // Add your search logic here
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Add click event listeners to articles
+        document.querySelectorAll('.article-card').forEach(article => {
+            article.addEventListener('click', () => {
+                // Add your article click logic here
+                console.log('Article clicked:', article.querySelector('.article-title').textContent);
+            });
+        });
+    </script>
+</body>
+
+</html>

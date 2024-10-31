@@ -1,0 +1,218 @@
+<html>
+ <head>
+  <title>
+   Đăng Ký
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            overflow: auto;
+        }
+        .container h2 {
+            color: #005baa;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f4f7;
+        }
+        .container input[type="text"]::placeholder,
+        .container input[type="password"]::placeholder {
+            color: #a0a0a0;
+        }
+        .container .radio-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .container .radio-group label {
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .container .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .container .captcha {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .container .captcha span {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f4f7;
+            font-weight: bold;
+        }
+        .container .captcha input[type="text"] {
+            width: calc(100% - 120px);
+        }
+        .container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .container .links {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .container .social-login {
+            margin-top: 20px;
+        }
+        .container .social-login a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #007bff;
+        }
+        .container .social-login a.facebook {
+            color: #3b5998;
+        }
+        .container .social-login a.twitter {
+            color: #1da1f2;
+        }
+        .container .social-login a.google {
+            color: #db4437;
+        }
+        .form-group {
+            display: none;
+            min-height: 500px; /* Ensure both forms have the same minimum height */
+        }
+        .form-group.active {
+            display: block;
+        }
+  </style>
+  <script>
+   function toggleForm() {
+            var doctorForm = document.getElementById('doctor-form');
+            var patientForm = document.getElementById('patient-form');
+            if (document.getElementById('doctor-radio').checked) {
+                doctorForm.classList.add('active');
+                patientForm.classList.remove('active');
+            } else {
+                doctorForm.classList.remove('active');
+                patientForm.classList.add('active');
+            }
+        }
+
+        function generateCaptcha(elementId) {
+            var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var captcha = '';
+            for (var i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById(elementId).innerText = captcha;
+        }
+
+        window.onload = function() {
+            generateCaptcha('doctor-captcha-code');
+            generateCaptcha('patient-captcha-code');
+        }
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <h2>
+    ĐĂNG KÝ
+   </h2>
+   <div class="radio-group">
+    <label>
+     <input checked="" id="doctor-radio" name="account-type" onclick="toggleForm()" type="radio"/>
+     Cho bác sĩ
+    </label>
+    <label>
+     <input id="patient-radio" name="account-type" onclick="toggleForm()" type="radio"/>
+     Cho bệnh nhân
+    </label>
+   </div>
+   <div class="form-group active" id="doctor-form">
+    <input placeholder="Email" type="text"/>
+    <input placeholder="Mật khẩu" type="password"/>
+    <input placeholder="Nhập lại mật khẩu" type="password"/>
+    <input placeholder="Họ và tên" type="text"/>
+    <input placeholder="Số điện thoại" type="text"/>
+    <input placeholder="Chuyên khoa" type="text"/>
+    <input placeholder="Bệnh viện" type="text"/>
+    <div class="captcha">
+     <input placeholder="Mã xác thực" type="text"/>
+     <span id="doctor-captcha-code">
+     </span>
+    </div>
+    <button>
+     ĐĂNG KÝ
+    </button>
+   </div>
+   <div class="form-group" id="patient-form">
+    <input placeholder="Email" type="text"/>
+    <input placeholder="Mật khẩu" type="password"/>
+    <input placeholder="Nhập lại mật khẩu" type="password"/>
+    <input placeholder="Họ và tên" type="text"/>
+    <input placeholder="Số điện thoại" type="text"/>
+    <input placeholder="Ngày sinh" type="text"/>
+    <div class="captcha">
+     <input placeholder="Mã xác thực" type="text"/>
+     <span id="patient-captcha-code">
+     </span>
+    </div>
+    <button>
+     ĐĂNG KÝ
+    </button>
+   </div>
+   <div class="links">
+    <a href="#">
+     Đăng nhập
+    </a>
+    <a href="#">
+     Bạn quên mật khẩu?
+    </a>
+   </div>
+   <div class="social-login">
+    <p>
+     Hoặc đăng nhập bằng
+    </p>
+    <a class="facebook" href="#">
+     <i class="fab fa-facebook-f">
+     </i>
+    </a>
+    <a class="twitter" href="#">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+    <a class="google" href="#">
+     <i class="fab fa-google">
+     </i>
+    </a>
+   </div>
+  </div>
+ </body>
+</html>
