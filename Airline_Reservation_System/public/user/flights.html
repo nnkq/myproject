@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách chuyến bay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Pink Airline" class="logo-img">
+                <div class="logo-text">
+                    <h1>Pink Airline</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html" class="active"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" >
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+    <div class="progress-steps">
+        <div class="step active">
+            <span class="step-number">1</span>
+            <span class="step-name">Chọn chuyến bay</span>
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            <span class="step-name">Nhập thông tin</span>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            <span class="step-name">Thanh toán</span>
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            <span class="step-name">Hoàn tất</span>
+        </div>
+    </div>
+<section class="flight-search-results">
+    <div class="container">
+        <div class="search-filters">
+            <h3>Bộ lọc</h3>
+            
+            <div class="filter-group">
+                <h4>Giá vé</h4>
+                <div class="price-range">
+                    <input type="range" id="price-range" min="0" max="10000000" step="500000" value="5000000">
+                    <div class="price-labels">
+                        <span>0 VND</span>
+                        <span id="price-max">5,000,000 VND</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Hãng hàng không</h4>
+                <div class="checkbox-list">
+                    <label><input type="checkbox" name="airline" value="VN" checked> Vietnam Airlines</label>
+                    <label><input type="checkbox" name="airline" value="VU" checked> Vietravel Airlines</label>
+                    <label><input type="checkbox" name="airline" value="QH" checked> Bamboo Airways</label>
+                    <label><input type="checkbox" name="airline" value="BL" checked> Pacific Airlines</label>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Giờ khởi hành</h4>
+                <div class="time-slots">
+                    <button data-time="morning">Sáng (5h-12h)</button>
+                    <button data-time="afternoon">Chiều (12h-18h)</button>
+                    <button data-time="evening">Tối (18h-24h)</button>
+                    <button data-time="night">Đêm (0h-5h)</button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Hạng ghế</h4>
+                <div class="checkbox-list">
+                    <label><input type="checkbox" name="class" value="economy" checked> Phổ thông</label>
+                    <label><input type="checkbox" name="class" value="premium"> Phổ thông đặc biệt</label>
+                    <label><input type="checkbox" name="class" value="business"> Thương gia</label>
+                    <label><input type="checkbox" name="class" value="first"> Hạng nhất</label>
+                </div>
+            </div>
+            
+            <button id="apply-filters" class="btn-apply">Áp dụng bộ lọc</button>
+            <button id="reset-filters" class="btn-reset">Đặt lại</button>
+        </div>
+        
+        <div class="flight-listings" id="flight-listings">
+            <div id="search-info" style="margin-bottom: 20px;"></div>
+            <!-- Danh sách chuyến bay sẽ được render bằng JavaScript -->
+        </div>
+    </div>
+</section>
+
+<script src="js/script.js"></script>
+<script src="js/flights.js"></script>
+</body>
+</html>

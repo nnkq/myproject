@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - SkyWing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Pink Airline" class="logo-img">
+                <div class="logo-text">
+                    <h1>Pink Airline</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html" class="active"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" >
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container payment-container">
+        <div class="payment-steps">
+            <div class="step active">
+                <span class="step-number">1</span>
+                <span class="step-title">Thông tin hành khách</span>
+            </div>
+            <div class="step active">
+                <span class="step-number">2</span>
+                <span class="step-title">Thanh toán</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">Hoàn tất</span>
+            </div>
+        </div>
+        
+        <div class="payment-content">
+            <div class="payment-form">
+                <h2>Phương thức thanh toán</h2>
+                
+                <div class="payment-methods">
+                    <div class="payment-method active">
+                        <input type="radio" name="payment-method" id="credit-card" checked>
+                        <label for="credit-card">
+                            <i class="far fa-credit-card"></i>
+                            <span>Thẻ tín dụng/Thẻ ghi nợ</span>
+                        </label>
+                        
+                        <div class="payment-details">
+                            <div class="form-group">
+                                <label for="card-number">Số thẻ</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-name">Tên in trên thẻ</label>
+                                <input type="text" id="card-name" placeholder="NGUYEN VAN A">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Ngày hết hạn</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method">
+                        <input type="radio" name="payment-method" id="bank-transfer">
+                        <label for="bank-transfer">
+                            <i class="fas fa-university"></i>
+                            <span>Chuyển khoản ngân hàng</span>
+                        </label>
+                        
+                        <div class="payment-details">
+                            <p>Vui lòng chuyển khoản đến tài khoản sau:</p>
+                            <div class="bank-info">
+                                <p><strong>Ngân hàng:</strong> Vietcombank</p>
+                                <p><strong>Số tài khoản:</strong> 123456789</p>
+                                <p><strong>Tên tài khoản:</strong> Công ty TNHH PinkAirline</p>
+                                <p><strong>Nội dung:</strong> Mã đặt chỗ + Số điện thoại</p>
+                                <p><strong>Số tiền:</strong> 1,500,000 VND</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method">
+                        <input type="radio" name="payment-method" id="ewallet">
+                        <label for="ewallet">
+                            <i class="fas fa-wallet"></i>
+                            <span>Ví điện tử</span>
+                        </label>
+                        
+                        <div class="payment-details">
+                            <div class="ewallet-options">
+                                <button class="ewallet-option">
+                                    <img src="images/momo.png" alt="Momo">
+                                </button>
+                                <button class="ewallet-option">
+                                    <img src="images/zalopay.png" alt="ZaloPay">
+                                </button>
+                                <button class="ewallet-option">
+                                    <img src="images/vnpay.png" alt="VNPay">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="promo-code">
+                    <h3>Mã khuyến mãi</h3>
+                    <div class="promo-input">
+                        <input type="text" id="promo-code" placeholder="Nhập mã khuyến mãi">
+                        <button id="apply-promo">Áp dụng</button>
+                    </div>
+                    <p id="promo-message" class="hidden"></p>
+                </div>
+                
+                <div class="payment-summary">
+                    <h3>Tóm tắt thanh toán</h3>
+                    <div class="summary-item">
+                        <span>Vé máy bay (1 người lớn)</span>
+                        <span>1,500,000 VND</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Thuế và phí</span>
+                        <span>200,000 VND</span>
+                    </div>
+                    <div class="summary-item promo-item hidden">
+                        <span>Giảm giá</span>
+                        <span>-150,000 VND</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Tổng cộng</span>
+                        <span>1,550,000 VND</span>
+                    </div>
+                </div>
+                
+                <div class="terms-agreement">
+                    <input type="checkbox" id="agree-terms" required>
+                    <label for="agree-terms">Tôi đồng ý với <a href="#">Điều khoản và Điều kiện</a> của PinkAirline</label>
+                </div>
+                
+                <button id="complete-payment" class="btn-pay">Hoàn tất thanh toán</button>
+            </div>
+            
+            <div class="booking-details-sidebar">
+                <h3>Chi tiết chuyến bay</h3>
+                <div class="flight-details">
+                    <div class="flight-segment">
+                        <div class="flight-header">
+                            <span class="airline">Vietnam Airlines</span>
+                            <span class="flight-number">VN123</span>
+                        </div>
+                        <div class="flight-route">
+                            <div class="flight-time">
+                                <span class="time">08:00</span>
+                                <span class="date">21/05/2025</span>
+                                <span class="airport">HAN - Hà Nội</span>
+                            </div>
+                            <div class="flight-duration">
+                                <i class="fas fa-plane"></i>
+                                <span>2h 0m</span>
+                            </div>
+                            <div class="flight-time">
+                                <span class="time">10:00</span>
+                                <span class="date">21/05/2025</span>
+                                <span class="airport">SGN - TP HCM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="passenger-details">
+                    <h3>Hành khách</h3>
+                    <div class="passenger">
+                        <span class="name">Nguyễn Văn A</span>
+                        <span class="type">Người lớn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>

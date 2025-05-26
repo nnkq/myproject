@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWing - Đặt vé máy bay trực tuyến</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Pink Airline" class="logo-img">
+                <div class="logo-text">
+                    <h1>Pink Airline</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" >
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: url('https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg');">
+            <div class="container">
+                <h2>Tìm và đặt vé máy bay giá rẻ chỉ với 3 bước đơn giản!</h2>
+                <p>Khám phá ngay những ưu đãi tốt nhất dành cho bạn tại Pink Airline!</p>
+                
+                <div class="search-box">
+                    <div class="tabs">
+                        <button class="active">Một chiều</button>
+                        <button>Khứ hồi</button>
+                        <button>Nhiều thành phố</button>
+                    </div>
+                    
+                    <form id="flight-search">
+                        <div class="form-group">
+                            <label for="departure">Từ</label>
+                            <input type="text" id="departure" placeholder="Điểm khởi hành" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="arrival">Đến</label>
+                            <input type="text" id="arrival" placeholder="Điểm đến" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="departure-date">Ngày khởi hành</label>
+                            <input type="date" id="departure-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="return-date">Ngày về (nếu có)</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="passengers">Hành khách</label>
+                            <div class="passenger-selector">
+                                <span id="passenger-display" style="color:#000000;">Chọn số lượng hành khách</span>
+                                <div class="passenger-dropdown">
+                                    <div class="passenger-type">
+                                        <span>Người lớn</span>
+                                        <div class="counter">
+                                            <button type="button" class="decrease">-</button>
+                                            <span class="count">1</span>
+                                            <button type="button" class="increase">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="passenger-type">
+                                        <span>Trẻ em (2-11 tuổi)</span>
+                                        <div class="counter">
+                                            <button type="button" class="decrease">-</button>
+                                            <span class="count">0</span>
+                                            <button type="button" class="increase">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="passenger-type">
+                                        <span>Em bé (dưới 2 tuổi)</span>
+                                        <div class="counter">
+                                            <button type="button" class="decrease">-</button>
+                                            <span class="count">0</span>
+                                            <button type="button" class="increase">+</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="close-dropdown">Xong</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="class">Hạng ghế</label>
+                            <select id="class">
+                                <option value="economy">Phổ thông</option>
+                                <option value="premium">Phổ thông đặc biệt</option>
+                                <option value="business">Thương gia</option>
+                                <option value="first">Hạng nhất</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-search">Tìm chuyến bay</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="promotions">
+            <div class="container">
+                <h2>Ưu đãi đặc biệt</h2>
+                <div class="promo-cards">
+                    <div class="promo-card">
+                        <div class="promo-badge">SẮP DIỄN RA</div>
+                        <h3>Ưu đãi đặt sớm đến 50%</h3>
+                        <p>Đặt trước 30 ngày để nhận ưu đãi lớn</p>
+                        <a href="#" class="btn-promo">Xem chi tiết</a>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <div class="promo-badge">HOT</div>
+                        <h3>Giảm đến 1.000.000 VND</h3>
+                        <p>Khi thanh toán bằng thẻ tín dụng</p>
+                        <a href="#" class="btn-promo">Xem chi tiết</a>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <div class="promo-badge">MỚI</div>
+                        <h3>Combo vé + khách sạn</h3>
+                        <p>Tiết kiệm đến 30% khi đặt combo</p>
+                        <a href="#" class="btn-promo">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-routes">
+            <div class="container">
+                <h2>Các chặng bay phổ biến</h2>
+                <div class="route-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chặng bay</th>
+                                <th>Lịch bay</th>
+                                <th>Giá từ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TP HCM (SGN) - Đà Nẵng (DAD)</td>
+                                <td>Chủ Nhật, 25 thg 5 2025</td>
+                                <td>958.620 VND</td>
+                                <td><a href="booking.html" class="btn-book">Đặt ngay</a></td>
+                            </tr>
+                            <tr>
+                                <td>TP HCM (SGN) - Hà Nội (HAN)</td>
+                                <td>Thứ Tư, 18 thg 6 2025</td>
+                                <td>1.619.939 VND</td>
+                                <td><a href="booking.html" class="btn-book">Đặt ngay</a></td>
+                            </tr>
+                            <tr>
+                                <td>Hà Nội (HAN) - TP HCM (SGN)</td>
+                                <td>Thứ Tư, 18 thg 6 2025</td>
+                                <td>1.806.482 VND</td>
+                                <td><a href="booking.html" class="btn-book">Đặt ngay</a></td>
+                            </tr>
+                            <tr>
+                                <td>Đà Nẵng (DAD) - TP HCM (SGN)</td>
+                                <td>Thứ Năm, 5 thg 6 2025</td>
+                                <td>954.608 VND</td>
+                                <td><a href="booking.html" class="btn-book">Đặt ngay</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="flight-schedule">
+            <div class="container">
+                <h2>Lịch bay hôm nay</h2>
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hãng hàng không</th>
+                                <th>Thời gian khởi hành</th>
+                                <th>Thời gian đến</th>
+                                <th>Từ sân bay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vietravel Airlines</td>
+                                <td>08:45</td>
+                                <td>11:00</td>
+                                <td>Hà Nội (HAN)</td>
+                            </tr>
+                            <tr>
+                                <td>Vietnam Airlines</td>
+                                <td>10:30</td>
+                                <td>12:15</td>
+                                <td>TP HCM (SGN)</td>
+                            </tr>
+                            <tr>
+                                <td>Bamboo Airways</td>
+                                <td>14:20</td>
+                                <td>15:45</td>
+                                <td>Đà Nẵng (DAD)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h4>Về Pink Airline</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Trung tâm hỗ trợ</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ chúng tôi</a></li>
+                        <li><a href="#">Chính sách hoàn vé</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sản phẩm</h4>
+                    <ul>
+                        <li><a href="#">Vé máy bay</a></li>
+                        <li><a href="#">Khách sạn</a></li>
+                        <li><a href="#">Xe khách</a></li>
+                        <li><a href="#">Đưa đón sân bay</a></li>
+                        <li><a href="#">Combo du lịch</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Theo dõi chúng tôi</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    
+                    <h4>Tải ứng dụng</h4>
+                    <div class="app-download">
+                        <a href="#"><img src="images/google-play.png" alt="Google Play"></a>
+                        <a href="#"><img src="images/app-store.png" alt="App Store"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Pink Airline. Tất cả các quyền được bảo lưu.</p>
+                <p>Công ty TNHH Pink Airline Việt Nam | Mã số DN: 0312345678 | Tòa nhà Pink Airline, 123 Hòa Khánh Nam, TP.DN</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

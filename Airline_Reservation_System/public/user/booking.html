@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt chỗ chuyến bay - SkyWing</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Pink Airlines" class="logo-img">
+                <div class="logo-text">
+                    <h1>Pink Airlines</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html" class="active"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="booking-page">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-name">Chọn chuyến bay</div>
+                </div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <div class="step-name">Thông tin hành khách</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Thanh toán</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">Hoàn tất</div>
+                </div>
+            </div>
+
+            <div class="booking-content">
+                <!-- Flight Summary -->
+                <div class="flight-summary">
+                    <h2>Thông tin chuyến bay</h2>
+                    <div class="summary-card">
+                        <div class="flight-header">
+                            <div class="airline">
+                                <img src="images/airline-logos/default.png" alt="Airline Logo" id="airlineLogo">
+                                <span id="airlineName">Airline Name</span>
+                            </div>
+                            <div class="flight-class">Phổ thông</div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="departure">
+                                <time id="departureTime">00:00</time>
+                                <span id="departureDate">DD/MM/YYYY</span>
+                                <span id="departureAirport">Airport Name</span>
+                            </div>
+                            <div class="duration">
+                                <span id="flightDuration">0h 0m</span>
+                                <div class="flight-path">
+                                    <div class="line"></div>
+                                    <div class="plane"><i class="fas fa-plane"></i></div>
+                                </div>
+                                <span>Bay thẳng</span>
+                            </div>
+                            <div class="arrival">
+                                <time id="arrivalTime">00:00</time>
+                                <span id="arrivalDate">DD/MM/YYYY</span>
+                                <span id="arrivalAirport">Airport Name</span>
+                            </div>
+                        </div>
+                        <div class="price-summary">
+                            <div class="price">
+                                <span>Tổng cộng:</span>
+                                <span class="amount" id="totalPrice">0 VND</span>
+                            </div>
+                            <div class="passengers">
+                                <span id="passengerCount">1 Người lớn</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passenger Information Form -->
+                <div class="passenger-info">
+                    <h2>Thông tin hành khách</h2>
+                    <form id="passengerForm">
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h3>Thông tin liên hệ</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Họ và tên</label>
+                                    <input type="text" id="contactName" required placeholder="Nhập họ và tên liên hệ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" required placeholder="Nhập email liên hệ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactPhone">Số điện thoại</label>
+                                    <input type="tel" id="contactPhone" required placeholder="Nhập số điện thoại liên hệ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Passenger Count -->
+                        <div class="form-section">
+                            <h3>Số lượng hành khách</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="numAdults">Người lớn</label>
+                                    <input type="number" id="numAdults" min="1" max="9" value="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numChildren">Trẻ em (2-11 tuổi)</label>
+                                    <input type="number" id="numChildren" min="0" max="8" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="numInfants">Em bé (&lt;2 tuổi)</label>
+                                    <input type="number" id="numInfants" min="0" max="4" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Passenger Forms -->
+                        <div id="dynamicPassengerForms"></div>
+
+                        <!-- Special Requests -->
+                        <div class="form-section">
+                            <h3>Yêu cầu đặc biệt</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="specialMeal">Bữa ăn đặc biệt</label>
+                                    <select id="specialMeal">
+                                        <option value="none">Không yêu cầu</option>
+                                        <option value="vegetarian">Chay</option>
+                                        <option value="halal">Halal</option>
+                                        <option value="kosher">Kosher</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="specialAssistance">Hỗ trợ đặc biệt</label>
+                                    <select id="specialAssistance">
+                                        <option value="none">Không yêu cầu</option>
+                                        <option value="wheelchair">Xe lăn</option>
+                                        <option value="blind">Hỗ trợ người khiếm thị</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <a href="flights.html" class="btn-back btn-back-sm">
+                                <i class="fas fa-arrow-left"></i> Quay lại
+                            </a>
+                            <button type="submit" class="btn-continue">
+                                Tiếp tục <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <p>Pink Airlines - Hãng hàng không uy tín hàng đầu Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Hotline: 1900 1234</p>
+                    <p>Email: support@PinkAirline.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pink Airlines. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>

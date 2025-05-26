@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt chỗ của tôi - Pink Airline</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo SkyWing" class="logo-img">
+                <div class="logo-text">
+                    <h1>SkyWing Airlines</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html" class="active"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="my-bookings-title">Đặt chỗ của tôi</h1>
+        <div class="booking-tabs">
+            <button class="active" data-tab="upcoming">Sắp tới</button>
+            <button data-tab="completed">Đã hoàn thành</button>
+            <button data-tab="cancelled">Đã hủy</button>
+        </div>
+        <div class="bookings-container">
+            <div class="booking-tab-content active" id="upcoming"></div>
+            <div class="booking-tab-content" id="completed"></div>
+            <div class="booking-tab-content" id="cancelled"></div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+    <script src="js/my-booking.js"></script>
+</body>
+</html>

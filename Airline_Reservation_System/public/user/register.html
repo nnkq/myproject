@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - PinkAirline</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Pink Airline" class="logo-img">
+                <div class="logo-text">
+                    <h1>Pink Airline</h1>
+                    <p>Bay cao ước vọng</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="flights.html" class="active"><i class="fas fa-plane"></i> Vé máy bay</a></li>
+                    <li><a href="#"><i class="fas fa-hotel"></i> Khách sạn</a></li>
+                    <li><a href="#"><i class="fas fa-bus"></i> Xe khách</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Đưa đón</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" >
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html" class="btn-register">Đăng ký</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-form">
+            <h2>Đăng ký tài khoản</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-fullname">Họ và tên</label>
+                    <input type="text" id="register-fullname" placeholder="Nhập họ và tên của bạn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="Nhập địa chỉ email của bạn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-phone">Số điện thoại</label>
+                    <input type="tel" id="register-phone" placeholder="Ví dụ: +84901234567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Mật khẩu</label>
+                    <input type="password" id="register-password" placeholder="Tối thiểu 8 ký tự" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-confirm-password">Xác nhận mật khẩu</label>
+                    <input type="password" id="register-confirm-password" placeholder="Nhập lại mật khẩu" required>
+                </div>
+                
+                <button type="submit" class="btn-auth">Đăng ký</button>
+                
+                <div class="social-login">
+                    <p>Hoặc đăng ký bằng</p>
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button type="button" class="btn-social google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="auth-switch">
+                    Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
